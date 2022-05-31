@@ -1,6 +1,14 @@
 package com.wr.movies.entities;
 
-public class User {
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name= "tb_user")
+public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String email;

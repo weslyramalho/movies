@@ -1,9 +1,19 @@
 package com.wr.movies.entities;
 
-public class Movie {
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "tb_movie")
+public class Movie implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String titulo;
     private String comentario;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Movie() {
