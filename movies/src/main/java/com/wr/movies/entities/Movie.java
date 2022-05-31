@@ -11,6 +11,7 @@ public class Movie implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String titulo;
+    private Long nota;
     private String comentario;
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -19,9 +20,10 @@ public class Movie implements Serializable {
     public Movie() {
     }
 
-    public Movie(Long id, String titulo, String comentario, User user) {
+    public Movie(Long id, String titulo, Long nota, String comentario, User user) {
         this.id = id;
         this.titulo = titulo;
+        this.nota = nota;
         this.comentario = comentario;
         this.user = user;
     }
@@ -40,6 +42,14 @@ public class Movie implements Serializable {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public Long getNota() {
+        return nota;
+    }
+
+    public void setNota(Long nota) {
+        this.nota = nota;
     }
 
     public String getComentario() {
