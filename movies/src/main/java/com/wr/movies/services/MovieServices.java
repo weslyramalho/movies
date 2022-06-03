@@ -39,7 +39,6 @@ public class MovieServices {
     }
     private void updateData(Movie m, Movie movie){
         m.setTitulo(movie.getTitulo());
-        m.setUser(movie.getUser());
         m.setComentario(movie.getComentario());
         m.setNota(movie.getNota());
     }
